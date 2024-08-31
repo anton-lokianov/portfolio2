@@ -1,12 +1,13 @@
-import React from "react";
-import { Html, Button, Head, Text, Container } from "@react-email/components";
+import { Button, Html, Head, Text, Container } from "@react-email/components";
+import * as React from "react";
 
-type ThankYouEmailProps = {
+type ForMeProps = {
   name?: string;
   message: string;
+  email: string;
 };
 
-const ThankYouEmail = ({ name = "there", message }: ThankYouEmailProps) => {
+export default function ForMeEmail({ name, message, email }: ForMeProps) {
   return (
     <Html>
       <Head>
@@ -66,27 +67,25 @@ const ThankYouEmail = ({ name = "there", message }: ThankYouEmailProps) => {
       </Head>
       <Container className="container">
         <div className="header">
-          <Text className="heading">Thank You!</Text>
+          <Text className="heading">Message from {name}</Text>
         </div>
 
         <div className="body">
-          <Text className="paragraph">
-            Hey <strong>{name}</strong>,
-          </Text>
-          <Text className="paragraph">
-            Thank you for reaching out! I appreciate your message and will get
-            back to you as soon as possible.
-          </Text>
-          <Text className="paragraph">Here's what you wrote to me:</Text>
+          <Text className="paragraph">You have received a new message:</Text>
           <Text className="blockquote">"{message}"</Text>
+          <Text className="paragraph">
+            Please review and respond at your earliest convenience.
+          </Text>
         </div>
 
         <div className="button-container">
           <Button
-            href="https://example.com"
+            href={`https://mail.google.com/mail/?view=cm&fs=1&to=${email}&su=Re:%20Your%20Message&body=${encodeURIComponent(
+              message
+            )}`}
             style={{
-              background: "#007291",
-              color: "#ffffff",
+              background: "#000",
+              color: "#fff",
               padding: "12px 20px",
               textDecoration: "none",
               borderRadius: "5px",
@@ -94,16 +93,14 @@ const ThankYouEmail = ({ name = "there", message }: ThankYouEmailProps) => {
               fontSize: "16px",
               fontWeight: "bold",
             }}>
-            Visit My Website
+            Reply
           </Button>
         </div>
 
         <div className="footer">
-          <Text>&copy; 2024 Anton Lokianov</Text>
+          <Text>&copy; Anton Lokianov</Text>
         </div>
       </Container>
     </Html>
   );
-};
-
-export default ThankYouEmail;
+}
