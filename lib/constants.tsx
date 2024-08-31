@@ -105,9 +105,9 @@ export const experience: Experience[] = [
     title: "early 2024",
     description: [
       "full-stack developer freelancer",
-      "working on a project for a MALAM team",
+      "working on a project for a MALAM team IT support department",
       "the project is a platform for easy managing and organizing microsoft calendars",
-      "me and another developer create the idea and the design of the platform",
+      "A team of 2 developers implemented the project",
       "worked with microsoft graph api connect to our algorithm",
     ],
     stack: [
@@ -167,10 +167,12 @@ export const experience: Experience[] = [
       { name: "html", icon: <FaHtml5 /> },
       { name: "javascript", icon: <SiJavascript /> },
       { name: "react-query", icon: <SiReactquery /> },
+      { name: "python", icon: <FaPython /> },
+      { name: "redux", icon: <SiRedux /> },
     ],
     images: [],
     logo: "/github.png",
     name: "GitHub",
-    url: "https://github.com/anton-lokianov",
+    url: "https://github.com/anton-lokianov?tab=repositories",
   },
 ];

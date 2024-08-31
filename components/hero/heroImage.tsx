@@ -13,16 +13,17 @@ const HeroImage = ({ backgroundY }: { backgroundY: MotionValue<string> }) => {
       style={{
         y: backgroundY,
       }}
-      className="absolute bottom-0 w-full lg:max-w-[1000px] max-w-[640px] mx-auto left-0 right-0 lg:left-auto mix-blend-color-dodge lg:right-0"
+      className="user-drag-none absolute bottom-0 w-full lg:max-w-[1000px] max-w-[640px] mx-auto left-0 right-0 lg:left-auto mix-blend-color-dodge lg:right-0"
     >
       <Image
         width={1000}
         height={1400}
         style={{ width: "auto" }}
         src="/avatar.png"
-        className="w-full"
+        className="w-full user-drag-none pointer-events-none select-none"
         alt="avatar"
         priority
+        draggable={false}
       />
     </motion.div>
   );

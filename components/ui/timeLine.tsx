@@ -35,8 +35,8 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
 
   return (
     <div className="w-full bg-primary font-sans md:px-10" ref={containerRef}>
-      <div className="max-w-7xl mx-auto py-20 px-4 md:px-8 lg:px-10">
-        <h2 className="text-lg md:text-4xl mb-4 text-white  max-w-4xl">
+      <div className="max-w-7xl mx-auto flex justify-between items-center py-20 px-4 md:px-8 lg:px-10">
+        <h2 className="text-lg md:text-4xl text-white  max-w-4xl">
           My Experience
         </h2>
         <CvBTN />
@@ -76,7 +76,7 @@ export const Timeline = ({ data }: { data: TimelineEntry[] }) => {
               height: heightTransform,
               opacity: opacityTransform,
             }}
-            className="absolute inset-x-0 top-0  w-[2px] bg-gradient-to-t from-indigo-500 via-accent to-transparent from-[0%] via-[10%] rounded-full"
+            className="absolute inset-x-0 top-0  w-[2px] bg-gradient-to-t from-rose-300 via-accent to-transparent from-[0%] via-[10%] rounded-full"
           />
         </div>
       </div>

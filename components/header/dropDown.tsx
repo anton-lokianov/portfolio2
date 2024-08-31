@@ -32,14 +32,16 @@ const DropDown = () => {
   return (
     <div
       className="p-8 flex items-center justify-center bg-transparent"
-      ref={dropdownRef}>
+      ref={dropdownRef}
+    >
       <motion.div animate={active ? "open" : "closed"} className="absolute">
         <AnimatedHamburgerButton setActive={setActive} active={active} />
         <motion.ul
           initial={wrapperVariants.closed}
           variants={wrapperVariants}
           style={{ originY: "top", translateX: "-80%" }}
-          className="flex flex-col gap-2 p-2 rounded-lg bg-secondary shadow-xl absolute top-[120%] left-[50%] w-48 overflow-hidden z-10">
+          className="flex flex-col gap-2 p-2 rounded-lg bg-secondary shadow-xl absolute top-[120%] left-[50%] w-48 overflow-hidden z-10"
+        >
           <h2 className="text-center">Navigation</h2>
           {navLinks.map(({ icon, name, href }) => (
             <Option
@@ -71,7 +73,8 @@ const Option = ({ text, Icon, setActive, href }: OptionProps) => {
     <motion.li
       variants={itemVariants}
       onClick={() => setActive((prev) => !prev)}
-      className="flex items-center gap-2 w-full p-2 text-md font-medium whitespace-nowrap rounded-md hover:bg-primary/40 text-white hover:text-accent transition-all duration-300 cursor-pointer">
+      className="flex items-center gap-2 w-full p-2 text-md font-medium whitespace-nowrap rounded-md hover:bg-primary/40 text-white hover:text-accent transition-all duration-300 cursor-pointer"
+    >
       <Link href={href} legacyBehavior passHref className="w-full">
         <a className="flex items-center gap-2">
           <motion.span variants={actionIconVariants} className="text-accent">
@@ -91,14 +94,15 @@ const wrapperVariants = {
     scaleY: 1,
     transition: {
       when: "beforeChildren",
-      staggerChildren: 0.1,
+      staggerChildren: 0.04,
     },
   },
   closed: {
     scaleY: 0,
     transition: {
+      duration: 0.2, // Faster closing animation
       when: "afterChildren",
-      staggerChildren: 0.1,
+      staggerChildren: 0.02, // Less stagger for faster effect
     },
   },
 };
@@ -115,6 +119,7 @@ const itemVariants = {
     opacity: 0,
     y: -15,
     transition: {
+      duration: 0.15, // Faster item closing animation
       when: "afterChildren",
     },
   },
@@ -122,5 +127,5 @@ const itemVariants = {
 
 const actionIconVariants = {
   open: { scale: 1, y: 0 },
-  closed: { scale: 0, y: -7 },
+  closed: { scale: 0, y: -7, transition: { duration: 0.1 } }, // Faster icon closing animation
 };

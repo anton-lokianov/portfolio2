@@ -13,6 +13,8 @@ import {
 import { Button } from "../ui/button";
 import { LinkPreview } from "../ui/linkPreview";
 import { FaLink } from "react-icons/fa6";
+import { Meteors } from "../ui/meteors";
+import { BsArrowRight } from "react-icons/bs";
 
 const Experience = () => {
   const generateContent = (item: Experience) => {
@@ -22,7 +24,8 @@ const Experience = () => {
         whileInView={{ x: 0 }}
         viewport={{ once: true }}
         whileHover={{ scale: 1.05 }}
-        className="max-w-xl w-full hover:shadow-xl transition-all duration-300">
+        className="max-w-xl w-full hover:shadow-xl transition-all duration-300 relative overflow-hidden"
+      >
         <CardAbout className="absolute top-2 right-2">
           <Image
             src={item.logo}
@@ -41,7 +44,8 @@ const Experience = () => {
           {item.description.map((desc, index) => (
             <p
               key={index}
-              className="text-white text-xs sm:text-sm md:text-lg mb-2 sm:mb-4 leading-relaxed">
+              className="text-white text-xs sm:text-sm md:text-lg mb-2 sm:mb-4 leading-relaxed"
+            >
               {desc}
             </p>
           ))}
@@ -50,7 +54,8 @@ const Experience = () => {
           {item.stack.map((tech, index) => (
             <div
               key={index}
-              className="text-white flex flex-col items-center gap-1 sm:gap-2 bg-gray-700 rounded-md p-1 sm:p-2 shadow-inner">
+              className="text-white flex flex-col items-center gap-1 sm:gap-2 bg-gray-700 rounded-md p-1 sm:p-2 shadow-inner"
+            >
               <span className="text-base sm:text-lg">{tech.icon}</span>
               <span className="text-xs sm:text-sm">{tech.name}</span>
             </div>
@@ -58,7 +63,7 @@ const Experience = () => {
         </CardFooter>
         <div className="flex justify-center mb-3">
           <LinkPreview url={item.url}>
-            <Button className="flex items-center bg-red-400 hover:bg-red-400/90 py-2 gap-1 px-6">
+            <Button className="flex items-center border border-white/50 bg-red-400 hover:bg-red-400/90 py-2 gap-1 px-6">
               <span>
                 <FaLink />
               </span>
@@ -66,6 +71,7 @@ const Experience = () => {
             </Button>
           </LinkPreview>
         </div>
+        <Meteors number={20} className="z-10" />
       </Card>
     );
   };

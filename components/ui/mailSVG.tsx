@@ -8,7 +8,7 @@ export default function MailSVG() {
   const isInView = useInView(ref, { once: true });
 
   return (
-    <div ref={ref}>
+    <div className="" ref={ref}>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 100 100"
