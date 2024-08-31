@@ -2,7 +2,7 @@ import { Button, Html, Head, Text, Container } from "@react-email/components";
 import * as React from "react";
 
 type ForMeProps = {
-  name?: string;
+  name: string;
   message: string;
   email: string;
 };

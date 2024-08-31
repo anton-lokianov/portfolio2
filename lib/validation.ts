@@ -1,7 +1,12 @@
 import * as z from "zod";
 
 export const emailSchema = z.object({
-  name: z.string().optional(),
+  name: z
+    .string()
+    .min(2, { message: "Name must be at least 2 characters long" })
+    .max(12, {
+      message: "Name must be 20 characters or less",
+    }),
   email: z
     .string()
     .email({ message: "Invalid email" })
@@ -9,7 +14,7 @@ export const emailSchema = z.object({
   subject: z
     .string()
     .min(2, { message: "Subject must be at least 2 characters long" })
-    .max(30, { message: "Subject must be 30 characters or less" }),
+    .max(30, { message: "Subject must be 50 characters or less" }),
   message: z
     .string()
     .min(10, { message: "Message must be at least 10 characters long" })

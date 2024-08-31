@@ -6,7 +6,7 @@ type ThankYouEmailProps = {
   message: string;
 };
 
-const ThankYouEmail = ({ name = "there", message }: ThankYouEmailProps) => {
+const ThankYouEmail = ({ name, message }: ThankYouEmailProps) => {
   return (
     <Html>
       <Head>
