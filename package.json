@@ -7,10 +7,14 @@
     "fast": "next dev --turbo",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "email": "email dev --dir emails"
   },
   "dependencies": {
     "@radix-ui/react-hover-card": "^1.1.1",
+    "@react-email/components": "0.0.24",
+    "@react-email/tailwind": "0.1.0",
+    "axios": "^1.7.6",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "framer-motion": "^11.3.30",
@@ -18,10 +22,13 @@
     "qss": "^3.0.0",
     "react": "^18",
     "react-dom": "^18",
+    "react-hook-form": "^7.53.0",
     "react-icons": "^5.3.0",
     "react-tsparticles": "^2.12.2",
+    "resend": "^4.0.0",
     "tailwind-merge": "^2.5.2",
-    "tsparticles": "^2.12.0"
+    "tsparticles": "^2.12.0",
+    "zod": "^3.23.8"
   },
   "devDependencies": {
     "@types/node": "^20",
@@ -30,6 +37,7 @@
     "eslint": "^8",
     "eslint-config-next": "14.2.6",
     "postcss": "^8",
+    "react-email": "3.0.1",
     "tailwindcss": "^3.4.1",
     "typescript": "^5"
   }

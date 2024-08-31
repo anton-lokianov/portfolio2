@@ -7,7 +7,6 @@ import {
   Card,
   CardAbout,
   CardContent,
-  CardDescription,
   CardHeader,
   CardTitle,
 } from "../ui/card";
@@ -20,13 +19,12 @@ const About = () => {
   ];
 
   return (
-    <article className="w-full xl:w-1/2 p-4 sm:p-6 md:p-8 absolute lg:static top-16 md:top-14">
+    <article className="w-full xl:w-1/2 lg:max-w-3xl mx-auto p-4 sm:p-6 md:p-8 absolute lg:static top-28">
       <Card
         variants={fadeIn("left", 0.2)}
         initial="hidden"
         animate="show"
-        className="p-2"
-      >
+        className="p-3">
         <CardAbout className="bg-accent border border-black">
           About Me
         </CardAbout>
