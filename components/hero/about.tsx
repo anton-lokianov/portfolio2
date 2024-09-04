@@ -31,7 +31,7 @@ const About = () => {
         <CardHeader>
           <CardTitle className="text-3xl">Hey, I&apos;m Anton.</CardTitle>
           <FlipWords
-            className="text-3xl md:text-4xl xl:text-5xl"
+            className="text-2xl md:text-4xl xl:text-5xl"
             words={words}
           />
         </CardHeader>
