@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import * as React from "react";
 
@@ -89,6 +89,8 @@ const CardAbout = React.forwardRef<
     {...props}
   />
 ));
+
+CardAbout.displayName = "CardAbout";
 
 export {
   Card,

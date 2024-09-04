@@ -3,7 +3,6 @@ import Header from "@/components/header";
 import Hero from "@/components/hero";
 import Skills from "@/components/skills";
 import Contact from "@/components/contact";
-import { VelocityText } from "@/components/ui/velocityText";
 
 export default function Home() {
   return (
@@ -11,7 +10,6 @@ export default function Home() {
       <Header />
       <main className="h-full w-full">
         <Hero />
-        {/* <VelocityText /> */}
         <Experience />
         <Skills />
         <Contact />
