@@ -11,6 +11,7 @@ import { emailSchema } from "@/lib/validation";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { BsArrowRight } from "react-icons/bs";
 import axios from "axios";
+import { toast } from "sonner";
 
 type EmailForm = z.infer<typeof emailSchema>;
 
@@ -28,9 +29,14 @@ const Contact = () => {
   const handleSubmit = async (data: EmailForm) => {
     try {
       const response = await axios.post("/api/emails", data);
-      console.log(response.data);
+      if (response.statusText === "OK") {
+        toast.success("Email sent successfully");
+      }
     } catch (error) {
       console.error("Failed to send email:", error);
+      toast.error("Failed to send email");
+    } finally {
+      form.reset();
     }
   };
 
@@ -41,39 +47,62 @@ const Contact = () => {
       <h2 className="font-bold text-4xl">
         Contact <span className="text-accent">Me.</span>
       </h2>
-      <p className="text-lg text-white">
-        Have a question or want to work together?
-      </p>
       <MailSVG />
       <form
         autoComplete="off"
         onSubmit={form.handleSubmit(handleSubmit)}
         className="flex flex-col gap-4 w-full p-4 max-w-3xl">
-        <div className="flex gap-4">
+        <div className="flex flex-col gap-1">
           <Input
             {...form.register("name")}
             type="text"
-            placeholder="name"
+            placeholder="Name"
             className="h-12"
           />
+          {form.formState.errors.name && (
+            <p className="text-red-500 text-sm">
+              {form.formState.errors.name.message}
+            </p>
+          )}
+        </div>
+        <div className="flex flex-col gap-1">
           <Input
             {...form.register("email")}
             type="email"
-            placeholder="email"
+            placeholder="Email"
             className="h-12"
           />
+          {form.formState.errors.email && (
+            <p className="text-red-500 text-sm">
+              {form.formState.errors.email.message}
+            </p>
+          )}
         </div>
-        <Input
-          {...form.register("subject")}
-          type="text"
-          placeholder="subject"
-          className="h-12"
-        />
-        <Textarea
-          {...form.register("message")}
-          placeholder="message"
-          className="min-h-48 h-auto"
-        />
+        <div className="flex flex-col gap-1">
+          <Input
+            {...form.register("subject")}
+            type="text"
+            placeholder="Subject"
+            className="h-12"
+          />
+          {form.formState.errors.subject && (
+            <p className="text-red-500 text-sm">
+              {form.formState.errors.subject.message}
+            </p>
+          )}
+        </div>
+        <div className="flex flex-col gap-1">
+          <Textarea
+            {...form.register("message")}
+            placeholder="Message"
+            className="min-h-48 h-auto"
+          />
+          {form.formState.errors.message && (
+            <p className="text-red-500 text-sm">
+              {form.formState.errors.message.message}
+            </p>
+          )}
+        </div>
         <Button
           disabled={form.formState.isSubmitting}
           type="submit"

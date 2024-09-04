@@ -11,7 +11,7 @@ export default function Home() {
       <Header />
       <main className="h-full w-full">
         <Hero />
-        <VelocityText />
+        {/* <VelocityText /> */}
         <Experience />
         <Skills />
         <Contact />

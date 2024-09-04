@@ -17,6 +17,6 @@ export const emailSchema = z.object({
     .max(30, { message: "Subject must be 50 characters or less" }),
   message: z
     .string()
-    .min(10, { message: "Message must be at least 10 characters long" })
+    .min(8, { message: "Message must be at least 8 characters long" })
     .max(500, { message: "Message must be 500 characters or less" }),
 });

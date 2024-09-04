@@ -17,6 +17,7 @@ import {
   SiReactquery,
   SiJavascript,
   SiMicrosoftazure,
+  SiMui,
 } from "react-icons/si";
 import { RiTailwindCssFill, RiNextjsFill } from "react-icons/ri";
 import { DiMongodb, DiFirebase, DiMysql, DiJqueryLogo } from "react-icons/di";
@@ -139,6 +140,7 @@ export const experience: Experience[] = [
       { name: "typescript", icon: <SiTypescript /> },
       { name: "redux", icon: <SiRedux /> },
       { name: "sass", icon: <FaSass /> },
+      { name: "mui", icon: <SiMui /> },
     ],
     images: [],
     logo: "/noviopus.png",
@@ -169,10 +171,126 @@ export const experience: Experience[] = [
       { name: "react-query", icon: <SiReactquery /> },
       { name: "python", icon: <FaPython /> },
       { name: "redux", icon: <SiRedux /> },
+      { name: "angular", icon: <FaAngular /> },
     ],
     images: [],
     logo: "/github.png",
     name: "GitHub",
     url: "https://github.com/anton-lokianov?tab=repositories",
+  },
+];
+
+export type SkillsArr = {
+  title: string;
+  skills: { name: string; icon: string }[];
+};
+
+export const skillsArr: SkillsArr[] = [
+  {
+    title: "Frontend",
+    skills: [
+      {
+        name: "ReactJs",
+        icon: "https://icon.icepanel.io/Technology/svg/React.svg",
+      },
+      {
+        name: "JavaScript",
+        icon: "https://icon.icepanel.io/Technology/svg/JavaScript.svg",
+      },
+      {
+        name: "TypeScript",
+        icon: "https://icon.icepanel.io/Technology/svg/TypeScript.svg",
+      },
+      {
+        name: "React Native",
+        icon: "https://icon.icepanel.io/Technology/svg/React.svg",
+      },
+      {
+        name: "Redux",
+        icon: "https://icon.icepanel.io/Technology/svg/Redux.svg",
+      },
+      {
+        name: "Sass",
+        icon: "https://icon.icepanel.io/Technology/svg/Sass.svg",
+      },
+      {
+        name: "Tailwind CSS",
+        icon: "https://icon.icepanel.io/Technology/svg/Tailwind-CSS.svg",
+      },
+      {
+        name: "Angular",
+        icon: "https://icon.icepanel.io/Technology/svg/Angular.svg",
+      },
+      {
+        name: "HTML",
+        icon: "https://icon.icepanel.io/Technology/svg/HTML5.svg",
+      },
+      {
+        name: "CSS",
+        icon: "https://icon.icepanel.io/Technology/svg/CSS3.svg",
+      },
+    ],
+  },
+  {
+    title: "Backend",
+    skills: [
+      {
+        name: "NodeJs",
+        icon: "https://icon.icepanel.io/Technology/svg/Redux.svg",
+      },
+      {
+        name: "NextJs",
+        icon: "https://icon.icepanel.io/Technology/svg/Next.js.svg",
+      },
+      {
+        name: "Express",
+        icon: "https://icon.icepanel.io/Technology/svg/Express.svg",
+      },
+      {
+        name: "Python",
+        icon: "https://icon.icepanel.io/Technology/svg/Python.svg",
+      },
+      {
+        name: "MongoDB",
+        icon: "https://icon.icepanel.io/Technology/svg/MongoDB.svg",
+      },
+      {
+        name: "SQL",
+        icon: "https://icon.icepanel.io/Technology/svg/SQL-Developer.svg",
+      },
+      {
+        name: "NestJs",
+        icon: "https://icon.icepanel.io/Technology/svg/Nest.js.svg",
+      },
+    ],
+  },
+  {
+    title: "Misc",
+    skills: [
+      {
+        name: "Git",
+        icon: "https://icon.icepanel.io/Technology/svg/Git.svg",
+      },
+      {
+        name: "Microsoft SQL Server",
+        icon: "https://icon.icepanel.io/Technology/svg/Microsoft-SQL-Server.svg",
+      },
+      {
+        name: "AWS",
+        icon: "https://icon.icepanel.io/Technology/svg/AWS.svg",
+      },
+      {
+        name: "Docker",
+        icon: "https://icon.icepanel.io/Technology/svg/Docker.svg",
+      },
+      {
+        name: "Jira",
+        icon: "https://icon.icepanel.io/Technology/svg/Jira.svg",
+      },
+      {
+        name: "Jest",
+        icon: "https://icon.icepanel.io/Technology/svg/Jest.svg",
+      },
+    ],
   },
 ];
