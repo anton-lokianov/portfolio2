@@ -96,7 +96,7 @@ const SkillCard = ({
       <CardAbout className="bg-accent text-white border border-black font-semibold text-center px-2 rounded-t-lg">
         {title}
       </CardAbout>
-      <CardContent className="min-h-[300px] md:min-h-[500px] flex items-center place-content-center p-2 rounded-b-lg">
+      <CardContent className="min-h-[300px] lg:min-h-[500px] flex items-center place-content-center p-2 rounded-b-lg">
         <div className="grid grid-cols-3 gap-6">
           {skills.map((skill) => (
             <div key={skill.name} className="flex flex-col items-center gap-1">
