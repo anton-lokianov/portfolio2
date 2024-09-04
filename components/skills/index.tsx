@@ -75,8 +75,6 @@ const SkillCard = ({
   return (
     <Card
       drag="x"
-      layout // Add layout prop for smooth transitions
-      layoutId={`card-${title}`} // Assign layoutId based on title for consistency
       dragConstraints={{ left: 0, right: 0 }}
       className={cn(
         "w-full max-w-xs sm:max-w-md md:max-w-4xl hover:cursor-grab active:cursor-grabbing relative p-6 rounded-lg shadow-lg transition-all duration-300",
@@ -91,7 +89,7 @@ const SkillCard = ({
         zIndex: length - index,
         top: offsetY,
         right: -offsetX,
-        transition: "transform 0.125s",
+        transition: "transform 0.0125s",
       }}
       onDragEnd={() => handleDragEnd(index)}>
       <CardAbout className="bg-accent text-white border border-black font-semibold text-center px-2 rounded-t-lg">
