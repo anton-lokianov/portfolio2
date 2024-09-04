@@ -52,31 +52,33 @@ const Contact = () => {
         autoComplete="off"
         onSubmit={form.handleSubmit(handleSubmit)}
         className="flex flex-col gap-4 w-full p-4 max-w-3xl">
-        <div className="flex flex-col gap-1">
-          <Input
-            {...form.register("name")}
-            type="text"
-            placeholder="Name"
-            className="h-12"
-          />
-          {form.formState.errors.name && (
-            <p className="text-red-500 text-sm">
-              {form.formState.errors.name.message}
-            </p>
-          )}
-        </div>
-        <div className="flex flex-col gap-1">
-          <Input
-            {...form.register("email")}
-            type="email"
-            placeholder="Email"
-            className="h-12"
-          />
-          {form.formState.errors.email && (
-            <p className="text-red-500 text-sm">
-              {form.formState.errors.email.message}
-            </p>
-          )}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
+          <div className="flex flex-col gap-1">
+            <Input
+              {...form.register("name")}
+              type="text"
+              placeholder="Name"
+              className="h-12"
+            />
+            {form.formState.errors.name && (
+              <p className="text-red-500 text-sm">
+                {form.formState.errors.name.message}
+              </p>
+            )}
+          </div>
+          <div className="flex flex-col gap-1">
+            <Input
+              {...form.register("email")}
+              type="email"
+              placeholder="Email"
+              className="h-12"
+            />
+            {form.formState.errors.email && (
+              <p className="text-red-500 text-sm">
+                {form.formState.errors.email.message}
+              </p>
+            )}
+          </div>
         </div>
         <div className="flex flex-col gap-1">
           <Input
