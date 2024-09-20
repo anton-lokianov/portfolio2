@@ -3,10 +3,9 @@ import { Button } from "./button";
 import { FaFilePdf } from "react-icons/fa";
 
 export const CvBTN = () => {
-  // Handles the button click to download the CV
   const handleClick = () => {
     const link = document.createElement("a");
-    link.href = "/AntonCV.docx";
+    link.href = "/AntonCV.pdf";
     link.click();
   };
 
