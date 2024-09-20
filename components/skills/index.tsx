@@ -13,7 +13,8 @@ const Skills = () => {
   return (
     <section
       id="skills"
-      className="min-h-screen relative w-full grid place-items-center overflow-hidden">
+      className="min-h-[140vh] relative w-full grid place-items-center overflow-hidden"
+    >
       <h2 className="text-4xl font-bold absolute top-20 border-b-2 border-accent">
         Skills
       </h2>
@@ -91,7 +92,8 @@ const SkillCard = ({
         right: -offsetX,
         transition: "transform 0.0125s",
       }}
-      onDragEnd={() => handleDragEnd(index)}>
+      onDragEnd={() => handleDragEnd(index)}
+    >
       <CardAbout className="bg-accent text-white border border-black font-semibold text-center px-2 rounded-t-lg">
         {title}
       </CardAbout>
