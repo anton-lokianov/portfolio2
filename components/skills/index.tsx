@@ -13,9 +13,9 @@ const Skills = () => {
   return (
     <section
       id="skills"
-      className="min-h-[140vh] relative w-full grid place-items-center overflow-hidden"
+      className="min-h-[140vh] relative w-full grid place-items-center overflow-hidden px-3"
     >
-      <h2 className="text-4xl font-bold absolute top-20 border-b-2 border-accent">
+      <h2 className="text-4xl font-bold absolute top-32 md:top-20 border-b-2 border-accent">
         Skills
       </h2>
       {cards.map((card, idx) => (
@@ -78,7 +78,7 @@ const SkillCard = ({
       drag="x"
       dragConstraints={{ left: 0, right: 0 }}
       className={cn(
-        "w-full max-w-md md:max-w-4xl hover:cursor-grab active:cursor-grabbing relative p-2 rounded-lg shadow-lg transition-all duration-300",
+        "w-full max-w-xs sm:max-w-sm md:max-w-4xl hover:cursor-grab active:cursor-grabbing relative p-2 rounded-lg shadow-lg transition-all duration-300",
         { "border-accent/50": index === 0 }
       )}
       style={{
