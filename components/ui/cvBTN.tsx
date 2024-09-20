@@ -5,6 +5,7 @@ import { FaFilePdf } from "react-icons/fa";
 export const CvBTN = () => {
   const handleClick = () => {
     const link = document.createElement("a");
+    link.target = "_blank";
     link.href = "/AntonCV.pdf";
     link.click();
   };
