@@ -78,7 +78,7 @@ const SkillCard = ({
       drag="x"
       dragConstraints={{ left: 0, right: 0 }}
       className={cn(
-        "w-full max-w-xs sm:max-w-md md:max-w-4xl hover:cursor-grab active:cursor-grabbing relative p-6 rounded-lg shadow-lg transition-all duration-300",
+        "w-full max-w-md md:max-w-4xl hover:cursor-grab active:cursor-grabbing relative p-2 rounded-lg shadow-lg transition-all duration-300",
         { "border-accent/50": index === 0 }
       )}
       style={{
@@ -97,7 +97,7 @@ const SkillCard = ({
       <CardAbout className="bg-accent text-white border border-black font-semibold text-center px-2 rounded-t-lg">
         {title}
       </CardAbout>
-      <CardContent className="min-h-[300px] lg:min-h-[500px] flex items-center place-content-center p-2 rounded-b-lg">
+      <CardContent className="min-h-[460px] flex items-center place-content-center p-2 rounded-b-lg">
         <div className="grid grid-cols-3 gap-6">
           {skills.map((skill) => (
             <div key={skill.name} className="flex flex-col items-center gap-1">
